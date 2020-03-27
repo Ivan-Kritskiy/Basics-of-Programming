@@ -1,0 +1,5 @@
+include <iostream>
+using namespace std;
+void main(){
+coub << "hello world"<<endl;
+}
