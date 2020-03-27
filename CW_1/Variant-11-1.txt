@@ -1,0 +1,19 @@
+  
+include <iostream>
+using namespace std;
+void Zvorotna(int n)
+{
+	if (n)
+	{
+		cout << (n % 10)<< " ";
+		Zvorotna(n / 10);
+	}
+}
+
+int main()
+{
+	int n;
+  cout << "Input int n"<<endl;
+	cin >> n;
+	Zvorotna(n);
+}

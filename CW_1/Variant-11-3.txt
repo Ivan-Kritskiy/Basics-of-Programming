@@ -1,0 +1,39 @@
+include <iostream>
+using namespace std;
+void sort(int Lnu[], int n) {
+	int p = 1;
+	int p1 = 1;
+	int min = Lnu[0];
+	for(int i = 1; i < n; i++) {
+		if (Lnu[i] <= min) {
+			p = 0;
+			break;
+
+		}
+
+	}
+	int max = Lnu[0];
+	for (int j = 1; j < n; j++) {
+		if (Lnu[j] >= max) {
+			p1 = 0;
+			break;
+		}
+	}
+	if ((p == 0) && (p1 == 0)) {
+		cout << "string is not sorted out";
+	}else {
+		cout << "string is sorted out";
+	}
+
+}
+int main()
+{	
+	int n;
+	cout << "input n" << endl;
+	cin >> n;
+	int *arr = new int[n];
+	cout << "begin filling your string " << endl;
+	fill(arr, n);
+	sort(arr, n);
+
+}
