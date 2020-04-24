@@ -32,7 +32,9 @@ int main()
                 break;
             }
             else {
-                arr[i] = vert_max;
+                if (line_min == vert_max) {
+                    arr[i] = matrix[i][j2];
+                }
             }
             
         }
