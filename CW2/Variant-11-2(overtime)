@@ -1,0 +1,57 @@
+
+#include <iostream>
+using namespace std;
+void fill(int** matrix, int n, int n2) {
+    for (int i = 0; i < n; i++) {
+        matrix[i] = new int[n2];
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n2; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+}
+int main()
+{
+    int n, n2, j2;
+    cin >> n >> n2;
+    int line_min;
+    int* arr = new int[2*n];
+    int** matrix = new int* [n];
+    fill(matrix, n, n2);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n2; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    bool f;
+    for (int i = 0; i < n; i++) {
+        f = true;
+        line_min = matrix[i][i];
+        for (int j = 0; j < n2; j++) {
+            if (line_min >= matrix[i][j]) {
+                line_min = matrix[i][j];
+                j2 = j;
+            }
+        }
+        int vert_max = matrix[i][j2];
+        for (int k = 0; k < n; k++) {
+            if (vert_max < matrix[k][j2]) {
+                f = false;
+                break;
+            }
+        }
+        if ((line_min == vert_max) && (f != false)){
+            arr[i] = matrix[i][j2];
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+        delete[]matrix[i];
+    }
+    delete[]matrix;
+}
+// input >> 3 >> 3
+// input >> 4 3 5 6 2 7 8 1 0
+// output >> 3 n n -- де n = неініціалізований елемент
