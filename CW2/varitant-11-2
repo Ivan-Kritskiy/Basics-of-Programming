@@ -13,6 +13,7 @@ void fill(int** matrix, int n, int n2) {
 int main()
 {
     int n, n2,j2;
+    cin >> n >> n2;
     int line_min;
     int* arr = new int[n];
     int** matrix = new int* [n];
@@ -40,4 +41,3 @@ int main()
         cout << arr[i];
     }
 }
-
