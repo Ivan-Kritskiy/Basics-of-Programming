@@ -1,5 +1,5 @@
-include <iostream>
-include <string>
+#include <iostream>
+#include <string>
 using namespace std;
 void present(int** matrix, int n, int n2) {
     for (int i = 0; i < n; i++) {
@@ -11,9 +11,9 @@ void present(int** matrix, int n, int n2) {
 }
 int main()
 {
-    int k,k1;
+    int k, k1;
     k1 = 0;
-    string str;
+    string str, k2;
     getline(cin, str);
     int check = 0;
     int L = str.length();
@@ -21,21 +21,26 @@ int main()
         L = L - 1;
         check = check + 1;
     }
-    for (int i = L - 1; i > 0; i--) {
+    for (int i = L-1; i > 0; i--) {
         if ((L % i) == 0) {
             k = i;
             break;
+        }else {
+            continue;
         }
     }
-    int** matrix = new int* [k+check];
-    for (int i = 0; i < L/k; i++) {
-        matrix[i] = new int[k+check];
-    }
+    int** matrix = new int* [k + check];
     for (int i = 0; i < L / k; i++) {
-        for(int j = 0; j < k + check; j++){
-            matrix[i][j] = str[j];
-        } 
+        matrix[i] = new int[k];
+    }
+    for (int i = 0; i < k + check; i++) {
+        for (int j = 0; j < k; j++) {
+            k2 = str[k1];
+            matrix[i][j] = stoi(k2);
+            k1 = k1 + 1;
+        }
     }
     present(matrix, L / k, k + check);
-
 }
+//input 4865        output =>> 4 8
+//                             6 5
