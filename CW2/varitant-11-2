@@ -12,7 +12,7 @@ void fill(int** matrix, int n, int n2) {
 }
 int main()
 {
-    int n, n2;
+    int n, n2,j2;
     int line_min;
     int* arr = new int[n];
     int** matrix = new int* [n];
@@ -23,10 +23,11 @@ int main()
             if (line_min > matrix[i][j]) {
                 line_min = matrix[i][j];
             }
+            j2 = j;
         }
-        int vert_max = matrix[0][j];
+        int vert_max = matrix[0][j2];
         for (int k = 0; k < n; k++) {
-            if (vert_max < matrix[k][j]) {
+            if (vert_max < matrix[k][j2]) {
                 break;
             }
             else {
@@ -35,8 +36,8 @@ int main()
             
         }
     }
-      for (int i = 0; i < n, i++) {
-        cout << arr[i] << " ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i];
     }
 }
-}
+
