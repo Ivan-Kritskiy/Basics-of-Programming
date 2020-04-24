@@ -19,7 +19,7 @@ int main()
     int** matrix = new int* [n];
     fill(matrix, n, n2);
     for (int i = 0; i < n; i++) {
-        line_min = matrix[0][0];
+        line_min = matrix[i][i];
         for (int j = 0; j < n2; j++) {
             if (line_min > matrix[i][j]) {
                 line_min = matrix[i][j];
