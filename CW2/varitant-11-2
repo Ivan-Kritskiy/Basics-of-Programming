@@ -26,7 +26,7 @@ int main()
             }
             j2 = j;
         }
-        int vert_max = matrix[0][j2];
+        int vert_max = matrix[i][j2];
         for (int k = 0; k < n; k++) {
             if (vert_max < matrix[k][j2]) {
                 break;
