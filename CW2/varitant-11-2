@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+void fill(int** matrix, int n, int n2) {
+    for (int i = 0; i < n; i++) {
+        matrix[i] = new int[n2];
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n2; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+}
+int main()
+{
+    int n, n2;
+    int line_min;
+    int** matrix = new int* [n];
+    fill(matrix, n, n2);
+    for (int i = 0; i < n; i++) {
+        line_min = 0;
+        for (int j = 0; j < n; j++) {
+            if (line_min > matrix[i][j]) {
+                line_min = matrix[i][j];
+            }
+        }
+    }
+     
+}
